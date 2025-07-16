@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
                 hostname: 'i.postimg.cc',
                 pathname: '**', // or more specific like '/**/*.jpg'
             },
+            {
+                protocol: 'https',
+                hostname: 'admin.policycollective.org',
+                pathname: '**', // or more specific like '/**/*.jpg'
+            },
 			{
                 protocol: 'http',
                 hostname: '127.0.0.1',
