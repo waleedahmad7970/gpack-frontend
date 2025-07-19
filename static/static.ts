@@ -4,7 +4,6 @@ import {
   twitter_Icon,
   youtube_Icon,
 } from "@/public/assets/icons";
-import path from "path";
 
 export const headerList = [
   {

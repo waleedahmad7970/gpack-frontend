@@ -7,9 +7,10 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/effect-fade";
 import "react-phone-input-2/lib/style.css";
-// import { AppDispatch } from "@/components/AppDispatch";
+
 import Navbar from "@/components/header/navbar";
 import Footer from "@/components/footer/footer";
+import { getSiteData } from "@/lib/getSiteData";
 
 const inter = Inter({
   	subsets: ["latin"],
@@ -31,24 +32,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  	title: "GPACK - Global South Policy Action Collection",
+  	title: "GPAC - Global South Policy Action Collection",
   	description: "Global south policy action collection",
+	icons: {
+    	icon: '/assets/favicons/32x32-v1.png', 
+  },
 };
 
-export default function RootLayout({
-  	children,
-}: {
-  	children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode; }) {
+
+	const siteData = await getSiteData();
+
   	return (
     	<html
       		lang="en"
       		className={`${inter.variable} ${poppins.variable} ${manrope.variable}`}
     	>
       		<body suppressHydrationWarning className={`${inter.className}`}>
-        		<Navbar />
+        		<Navbar
+					socialMedia={siteData.socialMedia} 
+				/>
           		{children}
-        		<Footer />
+        		<Footer
+					socialMedia={siteData.socialMedia}
+					contactInfo={siteData.contactInfo}
+				/>
       		</body>
     	</html>
   	);

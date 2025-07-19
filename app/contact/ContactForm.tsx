@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { API_URL } from '@/config/config';
 import { useState } from 'react';
 import ErrorValidations from '@/components/ErrorValidations';
+import SuccessModal from '@/components/modals/SuccessModal';
 
 // 1. Define TypeScript type for form values
 interface ContactFormValues {
@@ -27,6 +28,7 @@ type LaravelValidationErrors = {
 export default function ContactForm() {
 
     const [errors, setErrors] = useState<string[]>([]);
+    const [showModal, setShowModal] = useState<boolean>(false);
 
     const initialValues: ContactFormValues = {
         name: '',
@@ -36,8 +38,6 @@ export default function ContactForm() {
 
     const handleSubmit = async (values: ContactFormValues, { setSubmitting, resetForm }: FormikHelpers<ContactFormValues>) => {
     
-     //   const { setSubmitting, resetForm } = formikBag;
-
         clearErrors();
 
         const payload = {
@@ -65,6 +65,8 @@ export default function ContactForm() {
 
             if (!res.ok) throw new Error('Unexpected error');
             
+            setShowModal(true)
+            resetForm()
            // toast.success("Well done! Profile updated successfully.")
 
         } catch(err) {
@@ -177,7 +179,7 @@ export default function ContactForm() {
                         <button
                             type="submit"
                             disabled={formik.isSubmitting || !formik.isValid}
-                            className="w-full max-w-[173px] rounded-[100px] bg-[#D98918] px-4 py-3 font-medium text-white transition duration-200 hover:bg-[#D98918] disabled:cursor-not-allowed disabled:opacity-50"
+                            className="w-full max-w-[173px] rounded-[100px] bg-[#D98918] px-4 py-3 font-medium text-white transition duration-200 hover:bg-[#D98918] cursor-pointer"
                         >
                             {formik.isSubmitting ? (
                                 <span className="flex items-center justify-center">
@@ -210,6 +212,11 @@ export default function ContactForm() {
                     </form>
                 )}
             </Formik>
+            
+            <SuccessModal 
+                show={showModal}
+                onClose={() => setShowModal(false)}
+            />
         </>
     );
 }
