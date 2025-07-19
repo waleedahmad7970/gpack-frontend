@@ -23,7 +23,7 @@ import GovernmentWorkSection from "@/components/Sections/GovernmentWorkSection";
 
 const WhyPageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/why-us`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/why-us`, fetcher)
     
     if(error) {
         return (

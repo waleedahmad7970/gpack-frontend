@@ -18,7 +18,7 @@ import FullPageLoader from '@/components/Loaders/FullPageLoader';
 
 const ApproachPageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/approach`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/approach`, fetcher)
     
     if(error) {
         return (

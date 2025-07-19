@@ -17,7 +17,7 @@ import { Publication } from '@/types/publication';
 
 const PublicationPageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/publication`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/publication`, fetcher)
     
     if(error) {
         return (

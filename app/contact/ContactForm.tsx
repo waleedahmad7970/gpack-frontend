@@ -70,7 +70,9 @@ export default function ContactForm() {
            // toast.success("Well done! Profile updated successfully.")
 
         } catch(err) {
-            setErrors(['A network error occured.'])
+            if(err) {
+                setErrors(['A network error occured.'])
+            }
         } finally {
             setSubmitting(false)
             resetForm()

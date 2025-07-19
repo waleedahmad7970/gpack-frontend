@@ -17,7 +17,7 @@ import FullPageLoader from "@/components/Loaders/FullPageLoader";
 
 const HomePageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/home`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/home`, fetcher)
     
     if(error) {
         return (

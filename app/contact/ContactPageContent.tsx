@@ -15,7 +15,7 @@ import ScrollingSection from "@/components/Sections/ScrollingSection";
 
 const ContactPageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/contact`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/contact`, fetcher)
     
     if(error) {
         return (

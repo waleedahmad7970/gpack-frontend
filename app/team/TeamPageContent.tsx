@@ -17,7 +17,7 @@ import FullPageLoader from '@/components/Loaders/FullPageLoader';
 
 const TeamPageContent = () => {
 
-    const { data, error, isLoading, mutate } = useSwr(`${API_URL}/page/team`, fetcher)
+    const { data, error, isLoading } = useSwr(`${API_URL}/page/team`, fetcher)
     
     if(error) {
         return (

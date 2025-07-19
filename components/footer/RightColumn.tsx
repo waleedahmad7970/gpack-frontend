@@ -105,7 +105,7 @@ const RightColumn: React.FC<RightColumnProps> = ({ socialMedia }) => {
                         </Link>
                     </li>
                     <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
-                        <Link href="/approach" className="hover:underline">
+                        <Link href="/approcah" className="hover:underline">
                             Themes
                         </Link>
                     </li>

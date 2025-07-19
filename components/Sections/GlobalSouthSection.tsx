@@ -1,15 +1,15 @@
 import React from "react";
 
-const scholars = [
-    "Paul Collier",
-    "William Easterly",
-    "Dani Rodrik",
-    "Robert Chambers",
-    "Amartya Sen",
-    "Mahbub ul Haq",
-    "Thandika Mkandawire",
-    "Vandana Shiva",
-];
+// const scholars = [
+//     "Paul Collier",
+//     "William Easterly",
+//     "Dani Rodrik",
+//     "Robert Chambers",
+//     "Amartya Sen",
+//     "Mahbub ul Haq",
+//     "Thandika Mkandawire",
+//     "Vandana Shiva",
+// ];
 
 const GlobalSouthSection = () => {
     return (

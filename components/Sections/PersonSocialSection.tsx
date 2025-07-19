@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import quotes from "../../public/assets/icons/quotes.svg";
-import person from "../../public/assets/icons/MaskGroup.svg";
+// import person from "../../public/assets/icons/MaskGroup.svg";
 
 interface PersonSocialSectionProps {
     ceo_name: string;
