@@ -36,7 +36,9 @@ export const metadata: Metadata = {
   	title: "GPAC - Global South Policy Action Collection",
   	description: "Global south policy action collection",
 	icons: {
-    	icon: 'https://www.policycollective.org/assets/favicons/32x32-v1.png'
+    	icon: '/favicons/32x32-v1.png',
+		shortcut: '/favicons/32x32-v1.png',
+		apple: '/favicons/16x16-v1.png'
   	},
 };
 
