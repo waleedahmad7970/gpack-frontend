@@ -6,8 +6,16 @@ import React, { useState } from "react";
 import { HeaderList } from "../Lists/header-list";
 import menuIcon from "../../public/assets/logo/List.svg";
 import Link from "next/link";
-import { SocialMedia } from "@/types/social";
+import { SocialMedia, SocialMediaItem } from "@/types/social";
 import { FRONTEND_URL } from "@/config/config";
+
+import {
+  	FaFacebookF,
+  	FaInstagram,
+  	FaXTwitter,
+  	FaLinkedinIn,
+  	FaYoutube,
+} from "react-icons/fa6";
 
 type NavBarProps = {
 	socialMedia: SocialMedia[]
@@ -20,6 +28,78 @@ const Navbar: React.FC<NavBarProps> = ({ socialMedia }) => {
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
+
+	function showIcon(item: SocialMediaItem, index: number)
+	{
+		switch(item.platform) {
+			case 'facebook':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaFacebookF size={20} className="text-white cursor-pointer hover:text-blue-500" />
+					</a>
+				);
+			case 'twitter':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaXTwitter size={20} className="text-white cursor-pointer hover:text-red-500" />
+					</a>
+				)
+			case 'linkedin':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaLinkedinIn size={20} className="text-white cursor-pointer hover:text-blue-400" />
+					</a>
+				)
+			case 'youtube':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaYoutube size={20} className="text-white cursor-pointer hover:text-red-400" />
+					</a>
+				)
+			case 'instagram':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaInstagram size={20} className="text-white cursor-pointer hover:text-pink-600" />
+					</a>
+				)
+			default:
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaInstagram size={20} className="text-white cursor-pointer hover:text-pink-600" />
+					</a>
+				)
+		}
+	}
 
   	return (	
     	<div className="font-inter absolute top-10 right-0 left-0 z-50 mx-auto flex w-full max-w-[1440px] items-center justify-between px-4 md:px-10">
@@ -34,23 +114,8 @@ const Navbar: React.FC<NavBarProps> = ({ socialMedia }) => {
 
 			<div className="hidden gap-5 md:flex">
 				{socialMedia
-					.filter(item => item.url !== null)
-					.map((item, index) => (
-						<a 
-							href={item.url}
-							key={index}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<Image
-								className="cursor-pointer"
-								src={FRONTEND_URL + '/' + item.icon || ""}
-								alt="GPAC"
-								width={24} 
-								height={24}
-							/>
-						</a>
-					)
+					?.filter((item): item is SocialMediaItem => !!item && !!item.url)
+					.map((item, index) => showIcon(item, index)
 				)}
 			</div>
 

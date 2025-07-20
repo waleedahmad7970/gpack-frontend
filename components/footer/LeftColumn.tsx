@@ -17,79 +17,80 @@ type LeftColumnProps = {
     contactInfo: ContactInfo
 }
 
-function showIcon(item: SocialMediaItem, index: number)
-{
-	switch(item.platform) {
-		case 'facebook':
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaFacebookF className="cursor-pointer hover:text-blue-500" />
-				</a>
-			);
-		case 'twitter':
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaXTwitter className="cursor-pointer hover:text-black" />
-				</a>
-			)
-		case 'linkedin':
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaLinkedinIn className="cursor-pointer hover:text-blue-700" />
-				</a>
-			)
-		case 'youtube':
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaYoutube className="cursor-pointer hover:text-red-600" />
-				</a>
-			)
-		case 'instagram':
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaInstagram className="cursor-pointer hover:text-pink-600" />
-				</a>
-			)
-		default:
-			return (
-				<a 
-					href={item.url}
-					key={index}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<FaInstagram className="cursor-pointer hover:text-pink-600" />
-				</a>
-			)
-	}
-}
-
 const LeftColumn: React.FC<LeftColumnProps> = ({ socialMedia, contactInfo }) => {
+
+	function showIcon(item: SocialMediaItem, index: number)
+	{
+		switch(item.platform) {
+			case 'facebook':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaFacebookF className="cursor-pointer hover:text-blue-500" />
+					</a>
+				);
+			case 'twitter':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaXTwitter className="cursor-pointer hover:text-black" />
+					</a>
+				)
+			case 'linkedin':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaLinkedinIn className="cursor-pointer hover:text-blue-700" />
+					</a>
+				)
+			case 'youtube':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaYoutube className="cursor-pointer hover:text-red-600" />
+					</a>
+				)
+			case 'instagram':
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaInstagram className="cursor-pointer hover:text-pink-600" />
+					</a>
+				)
+			default:
+				return (
+					<a 
+						href={item.url}
+						key={index}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<FaInstagram className="cursor-pointer hover:text-pink-600" />
+					</a>
+				)
+		}
+	}
+
     return (
         <>
             <div className="w-full space-y-4 lg:w-auto">
