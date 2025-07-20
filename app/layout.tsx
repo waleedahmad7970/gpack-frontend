@@ -11,6 +11,7 @@ import "react-phone-input-2/lib/style.css";
 import Navbar from "@/components/header/navbar";
 import Footer from "@/components/footer/footer";
 import { getSiteData } from "@/lib/getSiteData";
+import FullPageLoader from "@/components/Loaders/FullPageLoader";
 
 const inter = Inter({
   	subsets: ["latin"],
@@ -42,6 +43,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode; }) {
 
 	const siteData = await getSiteData();
+
+	if (!siteData) {
+    	return <FullPageLoader />
+  	}
 
   	return (
     	<html
