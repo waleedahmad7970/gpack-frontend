@@ -8,10 +8,7 @@ import "swiper/css/free-mode";
 import "swiper/css/effect-fade";
 import "react-phone-input-2/lib/style.css";
 
-import Navbar from "@/components/header/navbar";
-import Footer from "@/components/footer/footer";
-import { getSiteData } from "@/lib/getSiteData";
-import FullPageLoader from "@/components/Loaders/FullPageLoader";
+import LayoutShell from "@/components/LayoutShell";
 
 const inter = Inter({
   	subsets: ["latin"],
@@ -43,27 +40,15 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode; }) {
-
-	const siteData = await getSiteData();
-
-	if (!siteData) {
-    	return <FullPageLoader />
-  	}
-
   	return (
     	<html
       		lang="en"
       		className={`${inter.variable} ${poppins.variable} ${manrope.variable}`}
     	>
       		<body suppressHydrationWarning className={`${inter.className}`}>
-        		<Navbar
-					socialMedia={siteData.socialMedia} 
-				/>
-          		{children}
-        		<Footer
-					socialMedia={siteData.socialMedia}
-					contactInfo={siteData.contactInfo}
-				/>
+				
+				<LayoutShell>{children}</LayoutShell>
+        	
       		</body>
     	</html>
   	);
