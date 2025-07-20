@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   	title: "GPAC - Global South Policy Action Collection",
   	description: "Global south policy action collection",
 	icons: {
-    	icon: '/icon.png',
-		shortcut: '/icon.png',
-		apple: '/apple-icon.png'
+    	icon: '/favicon.png',
+		shortcut: '/favicon.png',
+		apple: '/apple-favicon.png'
   	},
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode; }) {
+export default function RootLayout({ children }: { children: React.ReactNode; }) {
   	return (
     	<html
       		lang="en"
