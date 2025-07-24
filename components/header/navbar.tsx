@@ -3,7 +3,7 @@
 import { logo } from "@/public/assets/logo";
 import Image from "next/image";
 import React, { useState } from "react";
-import { HeaderList } from "../Lists/header-list";
+import { HeaderList } from "../Lists/HeaderList";
 import menuIcon from "../../public/assets/logo/List.svg";
 import Link from "next/link";
 import { SocialMedia, SocialMediaItem } from "@/types/social";

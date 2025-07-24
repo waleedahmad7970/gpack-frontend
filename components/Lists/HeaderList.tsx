@@ -2,7 +2,6 @@
 
 import { headerList } from "@/static/static";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 type Props = {
   	setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,11 +9,8 @@ type Props = {
 
 export const HeaderList = ({ setIsMenuOpen }: Props) => {
 
-	const router = useRouter();
-
-	const handleClick = (path: string) => {
+	const handleClick = () => {
 		setIsMenuOpen(false)
-		router.push(path)
 	}
 
 
@@ -23,14 +19,16 @@ export const HeaderList = ({ setIsMenuOpen }: Props) => {
 			{headerList?.map((item, index) => (
 				<li key={index} className="group relative">
 					{/* Main Item */}
-					<div className="flex cursor-pointer items-center justify-between p-3 hover:bg-gray-100 hover:text-black">
+					<div 
+						className="flex cursor-pointer items-center justify-between p-3 hover:bg-gray-100 hover:text-black"
+						onClick={handleClick}
+					>
 						<Link 
-						//	href={item.path || "#"}
-							href="#"
-							onClick={() => handleClick(item.path)}
+							href={item.path || "#"}
 						>
 							<span>{item.title}</span>
 						</Link>
+
 					</div>
 
 					{/* Submenu (appears on hover) */}

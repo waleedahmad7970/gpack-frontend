@@ -43,12 +43,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 						<div className="mt-5 flex flex-wrap justify-center gap-4">
 							{textList.map((item, index) => (
 								<div key={index} className="flex items-center">
+									{index !== textList.length && (
+										<div className="mr-4 h-[12px] w-[12px] rounded-full border-[1.5px] border-white" />
+									)}
 									<p className="font-poppins text-[16px] leading-[150%] whitespace-nowrap text-white md:text-[20px]">
 										{item}
 									</p>
-									{index !== textList.length - 1 && (
-										<div className="ml-4 h-[12px] w-[12px] rounded-full border-[1.5px] border-white" />
-									)}
 								</div>
 							))}
 						</div>
