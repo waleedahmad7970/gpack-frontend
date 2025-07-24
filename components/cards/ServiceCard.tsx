@@ -32,15 +32,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 				</div>
 
 				{/* Learn more link - now fixed at bottom */}
-				<div className="mt-4 pt-4">
-					{/* Added padding-top for spacing */}
+				{/* <div className="mt-4 pt-4">
 					<a
 						href="#"
 						className="font-manrope inline-block text-[#D98918] underline transition-all duration-300 group-hover:translate-x-2"
 					>
 						Learn more
 					</a>
-				</div>
+				</div> */}
 
       			{/* Animated border */}
       			<div className="absolute bottom-0 left-0 h-1 w-0 bg-[#D98918] transition-all duration-500 group-hover:w-full" />

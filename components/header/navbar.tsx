@@ -7,7 +7,6 @@ import { HeaderList } from "../Lists/header-list";
 import menuIcon from "../../public/assets/logo/List.svg";
 import Link from "next/link";
 import { SocialMedia, SocialMediaItem } from "@/types/social";
-import { FRONTEND_URL } from "@/config/config";
 
 import {
   	FaFacebookF,
@@ -109,7 +108,9 @@ const Navbar: React.FC<NavBarProps> = ({ socialMedia }) => {
 			</Link>
 
 			<div className="hidden md:flex">
-				<HeaderList />
+				<HeaderList 
+					setIsMenuOpen={setIsMenuOpen}
+				/>
 			</div>
 
 			<div className="hidden gap-5 md:flex">
@@ -120,12 +121,17 @@ const Navbar: React.FC<NavBarProps> = ({ socialMedia }) => {
 			</div>
 
 			<button
-				className="z-50 p-2 md:hidden"
+				className="z-50 p-2 md:hidden cursor-pointer"
 				onClick={toggleMenu}
 				aria-label={isMenuOpen ? "Close menu" : "Open menu"}
 			>
 				{!isMenuOpen ? (
-					<Image src={menuIcon} alt="Open menu" width={24} height={24} />
+					<Image 
+						src={menuIcon} 
+						alt="Open menu" 
+						width={24} 
+						height={24} 
+					/>
 				) : (
 					<span className="text-4xl leading-none font-bold text-white">
 						&times;
@@ -136,27 +142,14 @@ const Navbar: React.FC<NavBarProps> = ({ socialMedia }) => {
 			{isMenuOpen && (
 				<div className="bg-opacity-90 fixed inset-0 z-40 flex flex-col items-center justify-center bg-black md:hidden">
 					<div className="flex flex-col items-center gap-8">
-						<HeaderList />
+						<HeaderList
+							setIsMenuOpen={setIsMenuOpen} 
+						/>
 
 						<div className="mt-8 flex gap-5">
 							{socialMedia
-								.filter(item => item.url !== null)
-								.map((item, index) => (
-									<a 
-										href={item.url}
-										key={index}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<Image
-											className="cursor-pointer"
-											src={FRONTEND_URL + '/' + item.icon || ""}
-											alt="GPAC"
-											width={24} 
-											height={24}
-										/>
-									</a>
-								)
+								?.filter((item): item is SocialMediaItem => !!item && !!item.url)
+								.map((item, index) => showIcon(item, index)
 							)}
 						</div>
 					</div>

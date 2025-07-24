@@ -97,22 +97,27 @@ const RightColumn: React.FC<RightColumnProps> = ({ socialMedia }) => {
                     </li>
                     <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
                         <Link href="/whyUs" className="hover:underline">
-                            What We Do
+                            Why Us
                         </Link>
                     </li>
                     <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
-                        <Link href="/publication" className="hover:underline">
-                            Insights & Publications
+                        <Link href="/team" className="hover:underline">
+                            Team
                         </Link>
                     </li>
                     <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
                         <Link href="/approcah" className="hover:underline">
-                            Themes
+                            Approach & Themes
+                        </Link>
+                    </li>
+                    <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
+                        <Link href="/publication" className="hover:underline">
+                            Publications
                         </Link>
                     </li>
                     <li className="text-[16px] leading-[24px] font-medium text-[#192451]">
                         <Link href="/contact" className="hover:underline">
-                            Contact Us
+                            Contact
                         </Link>
                     </li>
                 </ul>

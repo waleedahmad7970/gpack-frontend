@@ -147,7 +147,7 @@ export default function ContactForm() {
                                 }`}
                             />
                             {formik.touched.email && formik.errors.email && (
-                            <p className="mt-1 text-sm text-red-600">{formik.errors.email}</p>
+                                <p className="mt-1 text-sm text-red-600">{formik.errors.email}</p>
                             )}
                         </div>
 
