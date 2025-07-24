@@ -24,7 +24,7 @@ const TeamSection: React.FC<TeamMemberListProps> = ({ members = [] }) => {
 				{members.length > 0 && (
 					<>
 						{members.map((member, index) => (
-							<div key={index}>
+							<div key={index} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[388px]">
 								<MemberBox
 									member={member} 
 								/>

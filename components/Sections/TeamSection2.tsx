@@ -28,7 +28,7 @@ const TeamSection2: React.FC<TeamMemberListProps> = ({ coreMembers, fellowMember
 
                 <div className="flex flex-wrap gap-1 gap-y-12 md:justify-center md:gap-x-10">
                     {coreMembers.map((member, index) => (
-                        <div key={index}>
+                        <div key={index} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[388px]">
                             <MemberBox
                                 member={member} 
                             />
@@ -45,7 +45,7 @@ const TeamSection2: React.FC<TeamMemberListProps> = ({ coreMembers, fellowMember
             {/* First row: 3 cards */}
             <div className="flex flex-wrap gap-1 gap-y-12 md:justify-center md:gap-x-10">
                 {fellowMembers.map((member, index) => (
-                    <div key={index}>
+                    <div key={index} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[388px]">
                         <MemberBox
                             member={member} 
                         />

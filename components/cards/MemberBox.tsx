@@ -8,9 +8,7 @@ type MemberBoxProps = {
 
 const MemberBox: React.FC<MemberBoxProps> = ({ member }) => {
     return (
-        <div							
-            className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[388px]"
-        >
+        <>
             <div className="relative h-[200px] w-full overflow-hidden rounded-[8px] [clip-path:polygon(40px_0%,100%_0%,100%_100%,0%_100%,0%_40px)] md:h-[433px] md:w-[388px] md:rounded-xl md:[clip-path:polygon(100px_0%,100%_0%,100%_100%,0%_100%,0%_100px)]">
                 <Image
                     src={BACKEND_URL + '/' + member.photo_url}
@@ -50,7 +48,7 @@ const MemberBox: React.FC<MemberBoxProps> = ({ member }) => {
                     </div>
                 )}
             </div>
-        </div>
+        </>
     )
 }
 
