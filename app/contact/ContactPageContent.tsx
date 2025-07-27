@@ -53,10 +53,10 @@ const ContactPageContent = () => {
 
                     <div className="mb-[50px]">
                         <p className="mb-5 text-[16px] leading-normal font-normal text-[#192451] underline">
-                            info@opse.org
+                            {data.data.contactInfo.email}
                         </p>
                         <p className="text-[16px] leading-normal font-normal text-[#192451] underline">
-                            +82 51 123 4567
+                            {data.data.contactInfo.phone}
                         </p>
                     </div>
                 </div>
