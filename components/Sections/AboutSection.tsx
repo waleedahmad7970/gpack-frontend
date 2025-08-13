@@ -23,15 +23,7 @@ const AboutSection = () => {
 					<br /> Collective
         		</h2>
         		<p className="text-inter mx-auto mb-0 max-w-[527px] text-[16px] leading-[150%] font-normal text-[#262626] md:text-[20px]">
-         	 		We Enable Governments, Donors, INGOs And The Civil Society To Deliver Rapid
-          			<span className="font-semibold text-[#192451] px-1">
-            			Equitable Results
-          			</span>
-          				With
-          			<span className="font-semibold text-[#192451] px-1">
-            			Long Term Institutional
-          			</span>
-          			Change
+         	 		We enable Governments, Donors, IngOs, and Civil Society to deliver rapid, equitable results, ensuring long-term institutional change.
         		</p>
       		</div>
       		<div className="mx-auto max-w-[1196px]">
