@@ -42,7 +42,7 @@ const PublicationPageContent = () => {
 				title="Publications"
 			/>
 
-			<div className="mx-auto max-w-[784px] px-[10px] py-10 md:px-0">
+			<div className="mx-auto max-w-[1192px] px-[10px] py-10 md:px-0">
                 <div> 
 					<h2 className="font-manrope my-[50px] inline-block w-full text-center text-[32px] font-semibold text-black md:text-[48px]">
 						Books
@@ -50,12 +50,15 @@ const PublicationPageContent = () => {
 
 					<div className="flex flex-wrap gap-1 gap-y-12 md:justify-center md:gap-x-10">
 						{data.data.books.map((publication: Publication, idx: number) => (
-							<PublicationCard 
-                                key={idx} 
-                                publication={publication} 
-                            />
+							<div key={idx} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[380px]">
+								<PublicationCard 
+									key={idx} 
+									publication={publication} 
+								/>
+							</div>
 						))}
 					</div>
+					
 				</div>
                 <div> 
 					<h2 className="font-manrope my-[50px] inline-block w-full text-center text-[32px] font-semibold text-black md:text-[48px]">
@@ -64,10 +67,12 @@ const PublicationPageContent = () => {
 
 					<div className="flex flex-wrap gap-1 gap-y-12 md:justify-center md:gap-x-10">
 						{data.data.chapters.map((publication: Publication, idx: number) => (
-							<PublicationCard 
-                                key={idx} 
-                                publication={publication} 
-                            />
+							<div key={idx} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[380px]">
+								<PublicationCard 
+									key={idx} 
+									publication={publication} 
+								/>
+							</div>
 						))}
 					</div>
 				</div>
@@ -78,10 +83,12 @@ const PublicationPageContent = () => {
 
 					<div className="flex flex-wrap gap-1 gap-y-12 md:justify-center md:gap-x-10">
 						{data.data.assignments.map((publication: Publication, idx: number) => (
-							<PublicationCard 
-                                key={idx} 
-                                publication={publication} 
-                            />
+							<div key={idx} className="flex max-w-[calc(50%-2px)] flex-col items-start md:max-w-[380px]">
+								<PublicationCard 
+									key={idx} 
+									publication={publication} 
+								/>
+							</div>
 						))}
 					</div>
 				</div>

@@ -24,7 +24,7 @@ export const headerList = [
   	{
     	title: "Approach & Themes",
     	path: "/approcah",
-    	subItems: ["Advantages", "Testimonials"],
+    	subItems: [],
   	},
   	{
     	title: "Publications",

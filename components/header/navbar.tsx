@@ -1,6 +1,6 @@
 "use client";
 
-import { logo } from "@/public/assets/logo";
+import logo from "@/public/assets/logo/gpack_logo.svg";
 import Image from "next/image";
 import React, { useState } from "react";
 import { HeaderList } from "../Lists/HeaderList";

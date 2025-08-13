@@ -2,16 +2,16 @@ import React from "react";
 import ServiceCard from "../cards/ServiceCard";
 import { services } from "@/static/static-elements";
 import Image from "next/image";
-import { GPAC } from "@/public/assets/logo";
+import GPAC from "@/public/assets/logo/GPAC.svg";
 
 const AboutSection = () => {
   	return (
     	<section className="mx-auto max-w-[1196px] px-[10px] py-[40px] md:px-0 md:py-[100px]">
       		<Image 
 				src={GPAC} 
-				alt="gPackP2" 
+				alt="gpac" 
 				className="hidden sm:block" 
-			/>
+			/> 
       		<div className="mt-5 mb-10 flex flex-col justify-between md:flex-row md:items-center">
         		<h2 className="font-manrope mb-3 hidden text-[20px] leading-[140%] font-semibold text-[#192451] md:mb-0 md:block md:text-[48px]">
           			About Global South

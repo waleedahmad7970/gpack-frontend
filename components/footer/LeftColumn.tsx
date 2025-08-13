@@ -94,11 +94,11 @@ const LeftColumn: React.FC<LeftColumnProps> = ({ socialMedia, contactInfo }) => 
     return (
         <>
             <div className="w-full space-y-4 lg:w-auto">
-                <div className="flex h-[34px] flex-col items-start gap-3 sm:flex-row md:h-[70px]">
+                <div className="flex flex-col items-start gap-3 sm:flex-row md:h-[70px]">
                     <Image
                         src={footerLogo}
                         alt="GPAC Logo"
-                        className="h-full w-[150px] sm:w-[188px]"
+                        className="w-[150px] sm:w-[188px]"
                     />
                 </div>
 
@@ -110,7 +110,7 @@ const LeftColumn: React.FC<LeftColumnProps> = ({ socialMedia, contactInfo }) => 
                         {contactInfo.phone}
                     </div>
                     <a
-                        href="mailto:Javed.ahmed@bath.edu"
+                        href={`mailto:${contactInfo.email}`}
                         className="text-[16px] leading-[24px] font-normal text-[#192451] underline hover:underline"
                     >
                         {contactInfo.email}

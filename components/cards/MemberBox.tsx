@@ -20,7 +20,7 @@ const MemberBox: React.FC<MemberBoxProps> = ({ member }) => {
 
             <div className="mt-4">
                 <h3 className="font-manrope text-[14px] font-semibold text-[#262626] md:text-[24px] md:leading-normal">
-                    {member.name}	
+                    {member.prefix + '.'} {member.name}	
                 </h3>
                 {member.designation && (
                     <p className="text-[10px] font-normal text-[#262626] md:text-[16px] md:leading-[24px]">
